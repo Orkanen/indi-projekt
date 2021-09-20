@@ -1,0 +1,48 @@
+{
+  "dogs": [
+    {
+      "id": 1,
+      "breed": "pembroke-welsh-corgi",
+      "name": "Charles"
+    },
+    {
+      "id": 2,
+      "breed": "pug",
+      "name": "cheese"
+    },
+    {
+      "id": 3,
+      "breed": "dachshund",
+      "name": "ralph"
+    }
+  ],
+  "cats": [
+    {
+      "id": 1,
+      "breed": "ragdoll",
+      "name": "mimi"
+    },
+    {
+      "id": 2,
+      "breed": "siamese",
+      "name": "mocha"
+    },
+    {
+      "id": 3,
+      "breed": "russian-blue",
+      "name": "bean"
+    }
+  ],
+  "users": [
+    {
+      "email": "test@home.se",
+      "password": "$2a$10$kan9AO8mC/zxWSIcAC9JPe164o2arXNhYbLRO6DdUhdwxfQyIh3cu",
+      "id": 1
+    },
+    {
+      "email": "test2@home.se",
+      "password": "$2a$10$.S4oBgI2iMnBibPM1Vdqw.ZT98q/S2ACzjCU7lo81UlbMEnbFcleK",
+      "id": 2
+    }
+  ]
+}
