@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro');
+@import 'style.min.css';
 @import 'normalize.min.css';
-@import 'sass/variables';
-@import 'sass/container';
-@import 'sass/navigation';
-@import 'sass/typography';
-@import 'sass/button';
+@import 'shared/variables.scss';
+@import 'shared/container.scss';
+@import 'shared/navigation.scss';
+@import 'shared/typography.scss';
+@import 'shared/button.scss';

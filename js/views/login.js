@@ -2,7 +2,7 @@
 
 import m from 'mithril';
 
-import { dogs } from "../models/dogs.js";
+import { signin } from "../models/signin.js";
 
 let login = {
     view: function() {
@@ -11,23 +11,23 @@ let login = {
             m("form.login-form", {
                 onsubmit: function (event) {
                     event.preventDefault();
-                    dogs.login();
+                    signin.login();
                 }
             }, [
                 m("lavel.input-label", "E-post"),
                 m("input[type=email].input", {
                     oninput: function (event) {
                         //console.log(event.target.value);
-                        dogs.email = event.target.value;
+                        signin.email = event.target.value;
                     },
-                    value: dogs.email
+                    value: signin.email
                 }),
                 m("lavel.input-label", "Password"),
                 m("input[type=password].input", {
                     oninput: function (event) {
-                        dogs.password = event.target.value;
+                        signin.password = event.target.value;
                     },
-                    value: dogs.password
+                    value: signin.password
                 }),
                 m("input[type=submit][value=Log in].login-button", "Log In"),
                 m(m.route.Link, {

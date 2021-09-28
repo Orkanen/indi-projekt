@@ -1,36 +1,19 @@
 {
-  "dogs": [
+  "equipments": [
     {
-      "id": 1,
-      "breed": "pembroke-welsh-corgi",
-      "name": "Charles"
+      "machine": "computer",
+      "status_id": "",
+      "id": "2"
     },
     {
-      "id": 2,
-      "breed": "pug",
-      "name": "cheese"
+      "machine": "microscope",
+      "status_id": "200",
+      "id": "1"
     },
     {
-      "id": 3,
-      "breed": "dachshund",
-      "name": "ralph"
-    }
-  ],
-  "cats": [
-    {
-      "id": 1,
-      "breed": "ragdoll",
-      "name": "mimi"
-    },
-    {
-      "id": 2,
-      "breed": "siamese",
-      "name": "mocha"
-    },
-    {
-      "id": 3,
-      "breed": "russian-blue",
-      "name": "bean"
+      "machine": "computer",
+      "status_id": "",
+      "id": "JfX0_UK"
     }
   ],
   "users": [
@@ -43,6 +26,11 @@
       "email": "test2@home.se",
       "password": "$2a$10$.S4oBgI2iMnBibPM1Vdqw.ZT98q/S2ACzjCU7lo81UlbMEnbFcleK",
       "id": 2
+    },
+    {
+      "email": "test3@home.se",
+      "password": "$2a$10$IRZIGvdI1Vj10ndz3oHQG.xpBUlD.ATAlyAfBD/Wur2v1pfYXgBq6",
+      "id": 3
     }
   ]
 }

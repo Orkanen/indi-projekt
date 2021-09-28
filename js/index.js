@@ -6,12 +6,12 @@ import { login } from './views/login';
 import { register } from './views/register';
 import { home } from './views/home';
 
-import { dogs } from "./models/dogs.js";
+import { signin } from "./models/signin.js";
 
 m.route(document.body, "/", {
     "/": {
       onmatch: function() {
-          if (dogs.token) {
+          if (signin.token) {
               return home;
           }
 
@@ -28,7 +28,7 @@ m.route(document.body, "/", {
     },
     "/home": {
           onmatch: function() {
-              if (dogs.token) {
+              if (signin.token) {
                   console.log("Login Success");
                   return home;
               }
@@ -41,8 +41,8 @@ m.route(document.body, "/", {
       },
     "/logout": {
       onmatch: function() {
-          if (dogs.token) {
-              dogs.logout();
+          if (signin.token) {
+              signin.logout();
           }
           return m.route.set("/");
         }
