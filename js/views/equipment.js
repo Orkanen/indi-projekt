@@ -5,17 +5,25 @@ import m from 'mithril';
 import { equipment } from "../models/equipment.js";
 
 let equip = {
+    oninit: equipment.loadinAvailable,
+
     view: function() {
-        return [
-            m("h1", "Log In"),
-            m("form.login-form", {
-                onsubmit: function (event) {
-                    event.preventDefault();
-                    equipment.loadin();
-                }
-            }, [
-                m("lavel.input-label", "E-post")
-            ])
+        return [ m("div.contentHolder", [
+                m("h1", "Equipment-page"),
+                m("h3", "equipment for rent.")
+            ]),
+            m("div.hBox", equipment.currentEquipment.map(function (all) {
+                return m("div.bBox", [
+                    m("h3.bTitle", all.machine),
+                    m("button", {onclick: function(event) {
+                        equipment.rent(all.id),
+                        m.route.set("/home")
+                    }}, "Rent"),
+                    m("div.katBox", all.category),
+                    m("div.conBox", all.condition)
+                ]);
+            }))
         ];
     }
 }
+export { equip };

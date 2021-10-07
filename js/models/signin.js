@@ -7,6 +7,7 @@ let signin = {
     email: "",
     password: "",
     token: "",
+    user: "",
 
     currentsignin: [],
 
@@ -24,6 +25,7 @@ let signin = {
 
             console.log(result.accessToken);
 
+            signin.user = result.user;
             signin.token = result.accessToken;
 
             return m.route.set("/home");
@@ -45,6 +47,7 @@ let signin = {
 
     logout: function() {
         signin.token = "";
+        signin.user = "";
     }
 
 };

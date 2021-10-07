@@ -5,6 +5,9 @@ import { layout } from './views/layout';
 import { login } from './views/login';
 import { register } from './views/register';
 import { home } from './views/home';
+//import { equip } from './views/equipment';
+import { categories } from './views/categories';
+import { equip } from './views/categoriesId';
 
 import { signin } from "./models/signin.js";
 
@@ -51,6 +54,43 @@ m.route(document.body, "/", {
         render: function() {
             return m(layout, m(login));
         }
-    }
+    },
+    "/equipment": {
+      onmatch: function() {
+          if (signin.token) {
+              console.log("Login Success");
+              return equip;
+          }
 
+          return m.route.set("/login");
+      },
+      render: function(vnode) {
+          return m(layout, vnode);
+      }
+    },
+
+    "/equipment": {
+      onmatch: function() {
+          if (signin.token) {
+              console.log("Login Success");
+              return categories;
+          }
+
+          return m.route.set("/login");
+      },
+      render: function(vnode) {
+          return m(layout, vnode);
+      }
+    },
+
+    "/equipment/:id": {
+      onmatch: function() {
+          if (!signin.token) {
+                return m.route.set("/login");
+            }
+        },
+        render: function(vnode) {
+            return m(layout, m(equip, vnode.attrs));
+        }
+    }
 });

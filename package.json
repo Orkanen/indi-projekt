@@ -7,12 +7,14 @@
     "start": "webpack --watch --config webpack.dev.config.js && cordova run browser",
     "build": "webpack --config webpack.prod.config.js && cordova run browser",
     "api": "json-server db.json --routes routes.json",
-    "server": "json-server db.json -m ./node_modules/json-server-auth"
+    "server": "json-server db.json --routes routes.json -m ./node_modules/json-server-auth"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@mithril-icons/font-awesome": "^1.2.0",
     "mithril": "^2.0.4"
   },
   "devDependencies": {
