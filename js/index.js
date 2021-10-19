@@ -8,6 +8,8 @@ import { home } from './views/home';
 //import { equip } from './views/equipment';
 import { categories } from './views/categories';
 import { equip } from './views/categoriesId';
+import { admin } from './views/adminView';
+import { adminUsers } from './views/adminUserView';
 
 import { signin } from "./models/signin.js";
 
@@ -30,16 +32,13 @@ m.route(document.body, "/", {
         }
     },
     "/home": {
-          onmatch: function() {
-              if (signin.token) {
-                  console.log("Login Success");
-                  return home;
+        onmatch: function() {
+            if (!signin.token) {
+                  return m.route.set("/login");
               }
-
-              return m.route.set("/register");
           },
-          render: function(vnode) {
-              return m(layout, vnode);
+          render: function() {
+              return m(layout, m(home));
           }
       },
     "/logout": {
@@ -91,6 +90,32 @@ m.route(document.body, "/", {
         },
         render: function(vnode) {
             return m(layout, m(equip, vnode.attrs));
+        }
+    },
+
+    "/admin": {
+      onmatch: function() {
+          if (signin.token && signin.title == "admin") {
+                return admin;
+            }
+
+            return m.route.set("/login");
+        },
+        render: function(vnode) {
+            return m(layout, vnode);
+        }
+    },
+
+    "/admin/users": {
+      onmatch: function() {
+          if (signin.token && signin.title == "admin") {
+                return adminUsers;
+            }
+
+            return m.route.set("/login");
+        },
+        render: function(vnode) {
+            return m(layout, vnode);
         }
     }
 });

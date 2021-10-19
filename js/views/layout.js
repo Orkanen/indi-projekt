@@ -6,7 +6,20 @@ import { signin } from "../models/signin.js";
 
 let layout = {
     view: function(vnode) {
-        if (signin.token) {
+        if (signin.token && signin.title == "admin") {
+            return [
+                m("nav.top-nav",
+                    { textContent: ""},
+                    [
+                        m("a", { href: "#!/home" }, "Home"),
+                        m("a", { href: "#!/equipment" }, "Equipment"),
+                        m("a", { href: "#!/admin" }, "Admin"),
+                        m("a.bEnd", { href: "#!/logout" }, "Log Out")
+
+                    ]),
+                m("main.container", vnode.children)
+            ];
+        } else if (signin.token) {
             return [
                 m("nav.top-nav",
                     { textContent: ""},

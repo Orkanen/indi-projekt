@@ -5,18 +5,16 @@ body {
 .container {
     margin-bottom: 3.2rem;
     margin-top: 2rem;
-    line-height: 1.4;
-    font-size: 1.2rem;
+    //font-size: 1.2rem;
     background-color: #eff4f8
 }
 
 .bBox {
     padding: 1em;
-    margin-bottom: 0.5em;
     margin-top: 0.5em;
     font-size: 1.2em;
     background-color: #eff4f8;
-    border-radius: 0.2em;
+    border-radius: 0.1em;
     border-color: #eff4f8;
     width: 100%;
     box-shadow: 1px 1px 2px black;
@@ -47,7 +45,6 @@ body {
     padding-right: 0.2em;
     background-color: #97bb68;
     border-color: #97bb68;
-    line-height: 0.8em;
     font-family: 'Libre Baskerville', serif;
 }
 
@@ -60,13 +57,25 @@ body {
     padding-right: 0.2em;
     background-color: #bb6897;
     border-color: #bb6897;
-    line-height: 0.8em;
+    margin-right: 0.2em;
+}
+
+.userBox {
+    margin-left: 0.2em;
+    float: right;
+    border-radius: 0.2em;
+    padding: 0.2em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    background-color: #6897bb;
+    border-color: #6897bb;
 }
 
 .bTitle {
     margin-top: 0;
     color: black;
     margin-right: auto;
+    text-transform: capitalize;
 }
 
 .top-nav {
@@ -77,6 +86,7 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     background-color: #6897bb;
+    flex-wrap: wrap;
 }
 
 .top-nav a {
@@ -103,14 +113,24 @@ body {
 .equipBox {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .descBox {
     margin-right: auto;
+    padding-bottom: 1em;
 }
 
 .buttBox {
     margin-right:auto;
+    background-color: #6897bb;
+    color: white;
+    border-color: #6897bb;
+    padding: 0.2em;
+}
+
+.adminBox .buttBox {
+    margin-right: 0.5em;
 }
 
 .input {
@@ -133,4 +153,43 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
+}
+
+.modal {
+    background:#fff;
+    border:1px solid #eee;
+    position:fixed;
+    top:10px;
+    left:100px;
+    width:600px;
+}
+
+.crtBox {
+    background-color: #6897bb;
+    color: white;
+    border-color: #6897bb;
+    padding: 0.2em;
+    margin-left: 0.5em;
+}
+
+.adminBox {
+    margin-right: auto;
+}
+
+.login-button {
+    background-color: #6897bb;
+    color: white;
+    border-color: #6897bb;
+    padding: 0.2em;
+}
+
+.form-button {
+    background-color: #6897bb;
+    color: white;
+    border-color: #6897bb;
+    padding: 0.2em;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }

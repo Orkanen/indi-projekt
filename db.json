@@ -3,59 +3,40 @@
     {
       "machine": "blackberry",
       "condition": "worn",
-      "status_id": "200",
-      "userId": "",
+      "status_id": "400",
+      "usr": 1,
       "category": "phone",
       "description": "Blackberry mobiltelefon erbjuder ett användarvänligt tangentbord och en 1,8 tum stor TFT-skärm. Tack vare dess 3,5 mm-uttag och plats för microSD-kort kan enheten även användas som en musikspelare.",
       "id": 1,
       "image": "MobileAlt"
     },
     {
-      "machine": "blueberry",
+      "machine": "apple",
       "condition": "new",
-      "status_id": "200",
-      "userId": "",
-      "category": "phone",
-      "description": "Blueberry mobiltelefon erbjuder ett användarvänligt tangentbord och en 1,8 tum stor TFT-skärm. Tack vare dess 3,5 mm-uttag och plats för microSD-kort kan enheten även användas som en musikspelare.",
-      "id": 2,
-      "image": "MobileAlt"
-    },
-    {
-      "machine": "blueberry",
-      "condition": "old",
-      "status_id": "200",
-      "userId": "",
-      "category": "phone",
-      "description": "Blueberry mobiltelefon erbjuder ett användarvänligt tangentbord och en 1,8 tum stor TFT-skärm. Tack vare dess 3,5 mm-uttag och plats för microSD-kort kan enheten även användas som en musikspelare.",
-      "id": 3,
-      "image": "MobileAlt"
+      "status_id": "400",
+      "usr": 2,
+      "category": "laptop",
+      "description": "Alcatel 1066D mobiltelefon erbjuder ett användarvänligt tangentbord och en 1,8 tum stor TFT-skärm. Tack vare dess 3,5 mm-uttag och plats för microSD-kort kan enheten även användas som en musikspelare.",
+      "image": "Laptop",
+      "id": 2
     },
     {
       "machine": "apple",
       "condition": "new",
       "status_id": "200",
-      "userId": "",
-      "category": "ipad",
-      "description": "Alcatel 1066D mobiltelefon erbjuder ett användarvänligt tangentbord och en 1,8 tum stor TFT-skärm. Tack vare dess 3,5 mm-uttag och plats för microSD-kort kan enheten även användas som en musikspelare.",
-      "id": 4,
-      "image": "TabletAlt"
-    },
-    {
-      "machine": "book",
-      "condition": "new",
-      "status_id": "200",
-      "userId": "",
+      "usr": "",
       "category": "laptop",
       "description": "Alcatel 1066D mobiltelefon erbjuder ett användarvänligt tangentbord och en 1,8 tum stor TFT-skärm. Tack vare dess 3,5 mm-uttag och plats för microSD-kort kan enheten även användas som en musikspelare.",
-      "id": 5,
-      "image": "Laptop"
+      "image": "Laptop",
+      "id": 3
     }
   ],
   "users": [
     {
       "email": "test@home.se",
       "password": "$2a$10$kan9AO8mC/zxWSIcAC9JPe164o2arXNhYbLRO6DdUhdwxfQyIh3cu",
-      "id": 1
+      "id": 1,
+      "title": "admin"
     },
     {
       "email": "test2@home.se",

@@ -9,8 +9,8 @@ let categories = {
 
     view: function() {
         return [ m("div.contentHolder", [
-                m("h1", "Equipment-page"),
-                m("h3", "equipment for rent.")
+                m("h1", "Category-page"),
+                m("h3", "Choose Category.")
             ]),
             m("div.hBox", equipment.currentCategories.map(function (all) {
                 return m("a.bBox", {href: `#!/equipment/${all}`}, [

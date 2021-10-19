@@ -3,10 +3,10 @@
 import m from 'mithril';
 
 import { equipment } from "../models/equipment.js";
+import { layout } from './layout';
 import * as icons from '@mithril-icons/font-awesome/solid'
 
-
-var groupVisible = false;
+var grpVisible = false;
 var modal = {
     name: "",
     id: "",
@@ -22,34 +22,31 @@ var modal = {
                       m("p", modal.id),
                       m("p", modal.name),
                       m("button.buttBox", {onclick: function(event) {
-                          equipment.rent(modal.id),
-                          equipment.loadinBorrowed,
-                          m.route.set("/home")
-                      }}, "Rent"),
+                          grpVisible = false,
+                          m.route.set("/equipment")
+                      }}, "Return"),
                       m("button.buttBox", {onclick: function(event) {
                           modal.event("", ""),
-                          groupVisible = false
+                          grpVisible = false
                       }}, "Close")
                   ])
                 ];
     }
 }
 
-let equip = {
-    oninit: function(vnode) {
-        console.log(vnode.attrs.id);
-        equipment.loadCategories,
-        equipment.loadinwCategory(vnode.attrs.id)
-        groupVisible = false;
-    },
+let admin = {
+    oninit: equipment.loadinUserRent,
 
     view: function() {
-        return [ m("div.contentHolder", equipment.currentEquipment.map(function (all) {
-            return m("div.capitalize", [
-                m("h1", all.category+"s"),
-                m("h3", "Choose equipment to rent.")
-            ])
-        })),
+        return [ m("div.contentHolder", [
+                m("h1", "Administration"),
+                m("button.crtBox", {onclick: function(event) {
+                    grpVisible = true
+                }}, "Create"),
+                m("button.crtBox", {onclick: function(event) {
+                    m.route.set("/admin/users")
+                }}, "Users")
+            ]),
             m("div.hBox", equipment.currentEquipment.map(function (all) {
                 return m("div.bBox", [
                     m("div", [
@@ -61,14 +58,15 @@ let equip = {
                             m("div.descBox", all.description)
                         ]),
                         m("div.equipBox", [
-                            m("button.buttBox", {onclick: function(event) {
-                                //equipment.rent(all.id),
-                                //equipment.loadinBorrowed,
-                                //groupVisible = false
-                                modal.event(all.id, all.machine)
-                                groupVisible = true
-                                //m.route.set("/home")
-                            }}, "Rent"),
+                            m("div.adminBox", [
+                                m("button.buttBox", {onclick: function(event) {
+                                    grpVisible = true
+                                }}, "Edit"),
+                                m("button.buttBox", {onclick: function(event) {
+                                    grpVisible = true
+                                }}, "Delete")
+                            ]),
+                            m("div.userBox", all.userEmail),
                             m("div.katBox", all.category),
                             m("div.conBox", all.condition)
                         ])
@@ -76,13 +74,15 @@ let equip = {
                 ]);
             })),
             m("div", [
-                groupVisible ? m.fragment({
-                    oninit: modal.log(),
-                }, [
-                    modal.view()
-                ]) : null
-            ])
-        ];
+                    grpVisible ? m.fragment({
+                        oninit: modal.log(),
+                    }, [
+                        modal.view()
+                    ]) : null
+                ])
+            ];
     }
-}
-export { equip };
+};
+
+
+export { admin };

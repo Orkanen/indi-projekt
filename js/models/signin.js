@@ -8,6 +8,7 @@ let signin = {
     password: "",
     token: "",
     user: "",
+    title: "",
 
     currentsignin: [],
 
@@ -27,6 +28,7 @@ let signin = {
 
             signin.user = result.user;
             signin.token = result.accessToken;
+            signin.title = result.user.title;
 
             return m.route.set("/home");
             //return console.log("login success!");
