@@ -10,6 +10,11 @@ import { categories } from './views/categories';
 import { equip } from './views/categoriesId';
 import { admin } from './views/adminView';
 import { adminUsers } from './views/adminUserView';
+import { crtEquipment } from './views/crtEquipment';
+import { editEquipment } from './views/editEquipment';
+import { delEquipment } from './views/delEquipment';
+import { editUser } from './views/editUser';
+import { delUser } from './views/delUser';
 
 import { signin } from "./models/signin.js";
 
@@ -110,6 +115,71 @@ m.route(document.body, "/", {
       onmatch: function() {
           if (signin.token && signin.title == "admin") {
                 return adminUsers;
+            }
+
+            return m.route.set("/login");
+        },
+        render: function(vnode) {
+            return m(layout, vnode);
+        }
+    },
+
+    "/admin/crteq": {
+      onmatch: function() {
+          if (signin.token && signin.title == "admin") {
+                return crtEquipment;
+            }
+
+            return m.route.set("/login");
+        },
+        render: function(vnode) {
+            return m(layout, vnode);
+        }
+    },
+
+    "/admin/editeq/:id": {
+      onmatch: function() {
+          if (signin.token && signin.title == "admin") {
+                return editEquipment;
+            }
+
+            return m.route.set("/login");
+        },
+        render: function(vnode) {
+            return m(layout, vnode);
+        }
+    },
+
+    "/admin/deleq/:id": {
+      onmatch: function() {
+          if (signin.token && signin.title == "admin") {
+                return delEquipment;
+            }
+
+            return m.route.set("/login");
+        },
+        render: function(vnode) {
+            return m(layout, vnode);
+        }
+    },
+
+    "/admin/editusr/:id": {
+      onmatch: function() {
+          if (signin.token && signin.title == "admin") {
+                return editUser;
+            }
+
+            return m.route.set("/login");
+        },
+        render: function(vnode) {
+            return m(layout, vnode);
+        }
+    },
+
+    "/admin/delusr/:id": {
+      onmatch: function() {
+          if (signin.token && signin.title == "admin") {
+                return delUser;
             }
 
             return m.route.set("/login");

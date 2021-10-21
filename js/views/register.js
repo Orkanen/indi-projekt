@@ -33,7 +33,7 @@ let register = {
                         })
                     ]),
                     m("div.formButtBox", [
-                        m("input[type=submit][value=Register].button", "Register")
+                        m("input[type=submit][value=Register].login-button", "Register")
                     ])
                 ])
             ])

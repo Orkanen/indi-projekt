@@ -8,19 +8,29 @@ import * as icons from '@mithril-icons/font-awesome/solid'
 
 var groupVisible = false;
 var modal = {
-    name: "",
     id: "",
-    event: function(eventId, eventName) {
-        modal.id = eventId;
-        modal.name = eventName
+    name: "",
+    condition: "",
+    category: "",
+    image: "",
+    event: function(eventId, eventName, eventCon, eventCat, eventImage) {
+        modal.id = eventId,
+        modal.name = eventName,
+        modal.condition = eventCon,
+        modal.category = eventCat,
+        modal.image = eventImage
     },
     log: function() {
         console.log("group is now visible")
     },
     view: function() {
         return  [ m("div.modal", [
-                      m("p", modal.id),
-                      m("p", modal.name),
+                      m("div.equipModal", [
+                          m("h3.capitalize", modal.name),
+                          m(icons[modal.image], {height: "1em"}),
+                      ]),
+                      m("p", modal.condition),
+                      m("p", modal.category),
                       m("button.buttBox", {onclick: function(event) {
                           equipment.rent(modal.id),
                           equipment.loadinBorrowed,
@@ -38,18 +48,19 @@ var modal = {
 let equip = {
     oninit: function(vnode) {
         console.log(vnode.attrs.id);
+        equipment.currentEquipment = [];
         equipment.loadCategories,
         equipment.loadinwCategory(vnode.attrs.id)
         groupVisible = false;
     },
 
     view: function() {
-        return [ m("div.contentHolder", equipment.currentEquipment.map(function (all) {
-            return m("div.capitalize", [
-                m("h1", all.category+"s"),
+        return [ m("div.contentHolder",
+            m("div.capitalize", [
+                m("h1", equipment.cat+"s"),
                 m("h3", "Choose equipment to rent.")
             ])
-        })),
+        ),
             m("div.hBox", equipment.currentEquipment.map(function (all) {
                 return m("div.bBox", [
                     m("div", [
@@ -65,7 +76,8 @@ let equip = {
                                 //equipment.rent(all.id),
                                 //equipment.loadinBorrowed,
                                 //groupVisible = false
-                                modal.event(all.id, all.machine)
+                                modal.event(all.id, all.machine, all.condition,
+                                    all.category, all.image)
                                 groupVisible = true
                                 //m.route.set("/home")
                             }}, "Rent"),

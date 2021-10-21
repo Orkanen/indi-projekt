@@ -8,8 +8,17 @@ let equipment = {
     url: "http://localhost:3000/equipments",
     url2: "http://localhost:3000/users",
     currentEquipment: [],
+    currentCategory: "",
     currentCategories: [],
     currentUsers: [],
+    machine: "Title",
+    condition: "New",
+    status_id: 200,
+    usr: "",
+    category: "Category",
+    description: "Description",
+    image: "Archive",
+    cat: "",
 
     loadin: function() {
         return m.request({
@@ -23,6 +32,7 @@ let equipment = {
     },
 
     loadinwCategory: function(id) {
+        equipment.cat = id;
         return m.request({
             method: "GET",
             url: `${equipment.url}?category_like=${id}`
@@ -40,6 +50,17 @@ let equipment = {
         });
     },
 
+    loadinwId: function(id) {
+        //equipment.currentCategory = id;
+        return m.request({
+            method: "GET",
+            url: `${equipment.url}/${id}`
+        }).then(function(result) {
+            console.log(result.machine);
+            equipment.currentEquipment = result;
+        });
+    },
+
     loadinAvailable: function() {
         return m.request({
             method: "GET",
@@ -52,6 +73,7 @@ let equipment = {
     },
 
     loadinBorrowed: function() {
+        console.log(signin.user.id);
         return m.request({
             method: "GET",
             url: `${equipment.url}?usr_like=${signin.user.id}`
@@ -63,6 +85,8 @@ let equipment = {
     },
 
     loadinUserRent: function() {
+        console.log("called!");
+        equipment.currentEquipment=[];
         return m.request({
             method: "GET",
             url: `${equipment.url}`
@@ -96,6 +120,8 @@ let equipment = {
         }).then(function(result) {
             console.log(result);
             equipment.loadinBorrowed
+        }).then(function(){
+            equipment.loadinBorrowed();
         });
     },
 
@@ -110,6 +136,8 @@ let equipment = {
         }).then(function(result) {
             console.log(result);
             equipment.loadinBorrowed
+        }).then(function(){
+            equipment.loadCategories();
         });
     },
 
@@ -141,6 +169,56 @@ let equipment = {
             equipment.currentUsers = [];
             equipment.currentUsers = result;
         })
+    },
+
+    addEquipment: function() {
+        m.request({
+            url: `${equipment.url}`,
+            method: "POST",
+            body: {
+                machine: equipment.machine.toLowerCase(),
+                condition: equipment.condition.toLowerCase(),
+                status_id: 200,
+                usr: "",
+                category: equipment.category.toLowerCase(),
+                description: equipment.description,
+                image: equipment.image
+            }
+        }).then(function() {
+            //equipment.loadinUserRent();
+            equipment.machine = "Title",
+            equipment.condition = "New",
+            equipment.status_id = 200,
+            equipment.usr = "",
+            equipment.category = "Category",
+            equipment.description = "Description",
+            equipment.image = ""
+        });
+    },
+
+    editEquipment: function(id) {
+        m.request({
+            url: `${equipment.url}/${id}`,
+            method: "PATCH",
+            body: {
+                machine: equipment.machine.toLowerCase(),
+                condition: equipment.condition.toLowerCase(),
+                status_id: 200,
+                usr: "",
+                category: equipment.category.toLowerCase(),
+                description: equipment.description,
+                image: equipment.image
+            }
+        })
+    },
+
+    delEquipment: function(id) {
+        m.request({
+            method: "DELETE",
+            url: `${equipment.url}/${id}`
+        }).then(function(result) {
+            console.log(result);
+        });
     }
 };
 

@@ -36,13 +36,11 @@ var modal = {
     }
 }
 
-var test = function () {
-    equipment.loadinBorrowed,
-    grpVisible = false
-}
-
 let home = {
-    oninit: equipment.loadinBorrowed,
+    oninit: function() {
+        equipment.currentEquipment = [];
+        equipment.loadinBorrowed();
+    },
 
     view: function() {
         return [ m("div.contentHolder", [

@@ -133,6 +133,10 @@ body {
     margin-right: 0.5em;
 }
 
+.modal .buttBox {
+    margin-right: 0.5em;
+}
+
 .input {
     margin-right: 1em;
 }
@@ -156,12 +160,15 @@ body {
 }
 
 .modal {
-    background:#fff;
-    border:1px solid #eee;
+    background: #eff4f8;
+    border:0.1em solid #bb6897;
+    border-radius: 0.2em;
     position:fixed;
-    top:10px;
-    left:100px;
-    width:600px;
+    padding: 1em;
+    top:25%;
+    left:50%;
+    width:25%;
+    transform: translate(-50%, 0);
 }
 
 .crtBox {
@@ -192,4 +199,19 @@ body {
 
 .capitalize {
     text-transform: capitalize;
+}
+
+.equipModal {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.equipModal h3 {
+    margin-right: auto;
+}
+
+.equipModal svg {
+    margin-left: 0px;
+    padding-right: 1em;
+    padding-top: 1em;
 }

@@ -6,42 +6,14 @@ import { equipment } from "../models/equipment.js";
 import { layout } from './layout';
 import * as icons from '@mithril-icons/font-awesome/solid'
 
-var grpVisible = false;
-var modal = {
-    name: "",
-    id: "",
-    event: function(eventId, eventName) {
-        modal.id = eventId;
-        modal.name = eventName
-    },
-    log: function() {
-        console.log("group is now visible")
-    },
-    view: function() {
-        return  [ m("div.modal", [
-                      m("p", modal.id),
-                      m("p", modal.name),
-                      m("button.buttBox", {onclick: function(event) {
-                          grpVisible = false,
-                          m.route.set("/equipment")
-                      }}, "Return"),
-                      m("button.buttBox", {onclick: function(event) {
-                          modal.event("", ""),
-                          grpVisible = false
-                      }}, "Close")
-                  ])
-                ];
-    }
-}
-
 let admin = {
     oninit: equipment.loadinUserRent,
 
     view: function() {
         return [ m("div.contentHolder", [
-                m("h1", "Administration"),
+                m("h1", "Administration - Equipments"),
                 m("button.crtBox", {onclick: function(event) {
-                    grpVisible = true
+                    m.route.set("/admin/crteq")
                 }}, "Create"),
                 m("button.crtBox", {onclick: function(event) {
                     m.route.set("/admin/users")
@@ -60,10 +32,10 @@ let admin = {
                         m("div.equipBox", [
                             m("div.adminBox", [
                                 m("button.buttBox", {onclick: function(event) {
-                                    grpVisible = true
+                                    m.route.set(`/admin/editeq/${all.id}`)
                                 }}, "Edit"),
                                 m("button.buttBox", {onclick: function(event) {
-                                    grpVisible = true
+                                    m.route.set(`/admin/deleq/${all.id}`)
                                 }}, "Delete")
                             ]),
                             m("div.userBox", all.userEmail),
@@ -72,14 +44,7 @@ let admin = {
                         ])
                     ])
                 ]);
-            })),
-            m("div", [
-                    grpVisible ? m.fragment({
-                        oninit: modal.log(),
-                    }, [
-                        modal.view()
-                    ]) : null
-                ])
+            }))
             ];
     }
 };

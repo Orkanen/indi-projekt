@@ -39,10 +39,7 @@ let adminUsers = {
 
     view: function() {
         return [ m("div.contentHolder", [
-                m("h1", "Administration"),
-                m("button.crtBox", {onclick: function(event) {
-                    grpVisible = true
-                }}, "Create"),
+                m("h1", "Administration - Users"),
                 m("button.crtBox", {onclick: function(event) {
                     m.route.set("/admin")
                 }}, "Equipment")
@@ -57,12 +54,13 @@ let adminUsers = {
                         m("div.equipBox", [
                             m("div.adminBox", [
                                 m("button.buttBox", {onclick: function(event) {
-                                    grpVisible = true
+                                    m.route.set(`/admin/editusr/${all.id}`)
                                 }}, "Edit"),
                                 m("button.buttBox", {onclick: function(event) {
-                                    grpVisible = true
+                                    m.route.set(`/admin/delusr/${all.id}`)
                                 }}, "Delete")
                             ]),
+                            m("div.katBox", all.title),
                             m("div.conBox", all.id)
                         ])
                     ]);
