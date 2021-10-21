@@ -16,7 +16,7 @@ let register = {
                         signin.register();
                     }
                 }, [
-                    m("div.formBox", [
+                    m("div.formBoxLog", [
                         m("label.input-label", "E-post: "),
                         m("input[type=email].input", {
                             oninput: function (event) {

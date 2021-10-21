@@ -6,7 +6,7 @@
       "status_id": "200",
       "usr": "",
       "category": "laptop",
-      "description": "Description",
+      "description": "Edited description of item.",
       "image": "Laptop",
       "id": 4
     },
@@ -43,8 +43,8 @@
     {
       "machine": "redberry",
       "condition": "new",
-      "status_id": "400",
-      "usr": 1,
+      "status_id": "200",
+      "usr": "",
       "category": "tablet",
       "description": "This is a test of desc..",
       "image": "Tablet",
@@ -61,7 +61,7 @@
     {
       "email": "test2@home.se",
       "password": "$2a$10$FRyXqxf1TfBK1J9Zg/J3l.V1ZZKZvidYBnf15tdsiLmouX7s6bYiS",
-      "title": "user",
+      "title": "admin",
       "id": 2
     },
     {
