@@ -80,7 +80,7 @@ body {
 
 .top-nav {
     box-shadow: 0em 0em 1em darkgray;
-    padding: 1em;
+    //padding: 1em;
     overflow: auto;
     display: flex;
     flex-direction: row;
@@ -94,6 +94,7 @@ body {
     text-decoration: none;
     color: white;
     font-size:1.5em;
+    padding: 0.5em;
 }
 
 .bEnd {
@@ -219,4 +220,9 @@ body {
 .formBox {
     display: flex;
     flex-direction: column;
+}
+
+a.active {
+    background-color: #344b5d
+
 }

@@ -3,8 +3,8 @@
     {
       "machine": "apple",
       "condition": "new",
-      "status_id": "200",
-      "usr": "",
+      "status_id": "400",
+      "usr": 4,
       "category": "laptop",
       "description": "Edited description of item.",
       "image": "Laptop",
@@ -23,7 +23,7 @@
     {
       "machine": "blackberry",
       "condition": "new",
-      "status_id": 200,
+      "status_id": "200",
       "usr": "",
       "category": "mobile",
       "description": "A quick description..",
@@ -69,6 +69,12 @@
       "password": "$2a$10$42w0AxyNl2Yny3Azs/Ayf.yTsFOYzqHS6eZYjTptiaxsksIpmWVCC",
       "title": "user",
       "id": 3
+    },
+    {
+      "email": "camilla@milton.se",
+      "password": "$2a$10$tN8GRIdnF1bYWvpBB0Tl8eE1arCnXvjHoGVodMxDRk71QFE0hu5vi",
+      "title": "user",
+      "id": 4
     }
   ]
 }
