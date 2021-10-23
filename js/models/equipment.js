@@ -192,7 +192,7 @@ let equipment = {
             equipment.usr = "",
             equipment.category = "Category",
             equipment.description = "Description",
-            equipment.image = ""
+            equipment.image = "Archive"
         });
     },
 
@@ -219,6 +219,18 @@ let equipment = {
         }).then(function(result) {
             console.log(result);
         });
+    },
+
+    emptyEquip: function() {
+      return function() {
+          equipment.machine= "Title",
+          equipment.condition= "New",
+          equipment.status_id= 200,
+          equipment.usr= "",
+          equipment.category= "Category",
+          equipment.description= "Description",
+          equipment.image= "Archive"
+      };
     }
 };
 

@@ -35,7 +35,8 @@ var modal = {
 
 let crtEquipment = {
     oninit: function() {
-        groupVisible = false;
+        groupVisible = false,
+        equipment.emptyEquip
     },
     view: function () {
         return [
@@ -53,28 +54,28 @@ let crtEquipment = {
                             oninput: function (event) {
                                 equipment.machine = event.target.value;
                             },
-                            value: equipment.machine
+                            placeholder: "Title"
                         }),
                         m("label.input-label", "Condition: "),
                         m("input[type=text].input", {
                             oninput: function (event) {
                                 equipment.condition = event.target.value;
                             },
-                            value: equipment.condition
+                            placeholder: "New"
                         }),
                         m("label.input-label", "Category: "),
                         m("input[type=text].input", {
                             oninput: function (event) {
                                 equipment.category = event.target.value;
                             },
-                            value: equipment.category
+                            placeholder: "Category"
                         }),
                         m("label.input-label", "Description: "),
                         m("textarea.input", {
                             oninput: function (event) {
                                 equipment.description = event.target.value;
                             },
-                            value: equipment.description
+                            placeholder: "Description"
                         }),
                         m("label.input-label", "Image: "),
                         m('select', {

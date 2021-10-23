@@ -2,53 +2,63 @@
   "equipments": [
     {
       "machine": "apple",
-      "condition": "new",
+      "condition": "old",
       "status_id": "400",
       "usr": 4,
       "category": "laptop",
-      "description": "Edited description of item.",
+      "description": "Apple Slim Laptop.",
       "image": "Laptop",
       "id": 4
     },
     {
       "machine": "blueberry",
-      "condition": "new",
+      "condition": "poor",
       "status_id": "200",
       "usr": "",
       "category": "mobile",
-      "description": "this is another new desc..",
+      "description": "Blueberry mobile phone v1",
       "image": "Mobile",
-      "id": 5
+      "id": 8
     },
     {
       "machine": "blackberry",
       "condition": "new",
-      "status_id": "200",
-      "usr": "",
+      "status_id": "400",
+      "usr": 3,
       "category": "mobile",
-      "description": "A quick description..",
+      "description": "Blackberry Mobile 10A",
       "image": "Mobile",
-      "id": 6
+      "id": 9
+    },
+    {
+      "machine": "redberry",
+      "condition": "new",
+      "status_id": 200,
+      "usr": "",
+      "category": "tablet",
+      "description": "RedBerry Tablet 4",
+      "image": "Tablet",
+      "id": 10
     },
     {
       "machine": "redberry",
       "condition": "new",
       "status_id": "400",
-      "usr": 3,
-      "category": "laptop",
-      "description": "description..",
-      "image": "Laptop",
-      "id": 7
+      "usr": 5,
+      "category": "tablet",
+      "description": "Redberry Tablet 5",
+      "image": "Tablet",
+      "id": 11
     },
     {
-      "machine": "redberry",
+      "machine": "redberry 2",
       "condition": "new",
-      "status_id": "200",
+      "status_id": 200,
       "usr": "",
       "category": "tablet",
-      "description": "This is a test of desc..",
+      "description": "Redberry 2 Experience",
       "image": "Tablet",
-      "id": 8
+      "id": 12
     }
   ],
   "users": [
@@ -57,12 +67,6 @@
       "password": "$2a$10$kan9AO8mC/zxWSIcAC9JPe164o2arXNhYbLRO6DdUhdwxfQyIh3cu",
       "id": 1,
       "title": "admin"
-    },
-    {
-      "email": "test2@home.se",
-      "password": "$2a$10$FRyXqxf1TfBK1J9Zg/J3l.V1ZZKZvidYBnf15tdsiLmouX7s6bYiS",
-      "title": "admin",
-      "id": 2
     },
     {
       "email": "test3@home.se",
